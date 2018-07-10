@@ -1,41 +1,11 @@
 
-<%= form_with scope: :livre, url: livres_path, local: true do |form| %> 
 
-<% if @livre.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@livre.errors.count, "erreur") %>. Impossible d'enregistrer le livre :
-      </h2>
-      <ul>
-        <% @livre.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+<h1>Nouveau livre</h1>
 
-  <p>
-    <%= form.label :titre %><br>
-    <%= form.text_field :titre %>
-  </p>
-  <p>
-    <%= form.label :auteur %><br>
-    <%= form.text_field :auteur %>
-  </p>
+ <%# <%= form_with scope: :livre, url: livres_path, local: true do |form| %>
 
- <p>
-    <%= form.label :categorie %><br>
-    <%= form.text_field :categorie %>
-  </p>  
- 
-  <p>
-    <%= form.label :texte %><br>
-    <%= form.text_area :texte %>
-  </p>
- 
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
+
+
+<%= render 'form' %>
 
 <%= link_to 'Retour', livres_path %>

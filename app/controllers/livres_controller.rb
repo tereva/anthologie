@@ -1,5 +1,15 @@
 class LivresController < ApplicationController
 
+	def index
+		@livres = Livre.all
+		
+	end
+
+	def show
+		@livre = Livre.find(params[:id])
+	end
+
+
 	def new	
 		@livre = Livre.new
 	end
@@ -12,15 +22,27 @@ class LivresController < ApplicationController
 		else
 			render 'new'
 		end
-	end
+	end	
+	
 
-	def show
+	def edit
 		@livre = Livre.find(params[:id])
 	end
 
-	def index
-		@livres = Livre.all
+	def update
+		@livre = Livre.find(params[:id])
+		if @livre.update(livre_params)
+			redirect_to @livre
+		else
+			render 'edit'
+		end
 		
+	end
+
+	def destroy
+		@livre = Livre.find(params[:id])
+		@livre.destroy
+		redirect_to livres_path
 	end
 
 	private
