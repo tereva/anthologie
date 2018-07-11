@@ -17,15 +17,17 @@
     <%= form.label :titre %><br>
     <%= form.text_field :titre %>
   </p>
-  <p>
-    <%= form.label :auteur %><br>
-    <%= form.text_field :auteur %>
-  </p>
 
- <p>
-    <%= form.label :categorie %><br>
-    <%= form.text_field :categorie %>
-  </p>  
+  <p>
+      <%= form.collection_select(:auteur_id, Auteur.all, :id, :nom, {:include_blank => true}, {:class =>"form-control"}) %>
+    </p>
+
+
+  <p>
+  <%# <%= form.collection_select(:categorie_id, Categorie.all, :id, :nom, {:include_blank => true}, {:class =>"form-control"}) %>
+
+    </p>
+
  
   <p>
     <%= form.label :texte %><br>

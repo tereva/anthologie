@@ -11,7 +11,7 @@
   <% @livres.each do |livre| %>
     <tr>
       <td><%= livre.titre %></td>
-      <td><%= livre.auteur %></td>
+      <td><%= livre.auteur.nom %></td>
       <td><%= livre.categorie %></td>
       <td><%= link_to 'Voir', livre_path(livre) %></td>
       <td><%= link_to 'Editer', edit_livre_path(livre) %></td>

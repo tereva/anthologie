@@ -1,0 +1,12 @@
+
+<p>
+  <strong>Auteur:</strong>
+  <%= @auteur.nom%>
+</p>
+<p>
+  <strong>Bio:</strong>
+  <%= @auteur.bio%>
+</p>
+
+<%= link_to 'Editer', edit_auteur_path(@auteur) %>
+<%= link_to 'Retour', auteurs_path %>

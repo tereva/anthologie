@@ -1,0 +1,18 @@
+<h1>Tous les auteurs</h1>
+ 
+<table>
+  <tr>
+    <th>Auteur</th>
+    <th></th>
+  </tr>
+ 
+  <% @auteurs.each do |auteur| %>
+    <tr>
+      <td><%= auteur.nom %></td>
+      <td><%= link_to 'Voir', auteur_path(auteur) %></td>
+      <td><%= link_to 'Editer', edit_auteur_path(auteur) %></td>
+      <td><%= link_to 'Effacer', auteur_path(auteur), method: :delete, 
+                            data: {confirm: 'Etes vous sûr?'} %></td>
+    </tr>
+  <% end %>
+</table>
