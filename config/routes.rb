@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
+  get 'categories/index'
   get 'welcome/index'
   resources :livres
   resources :auteurs
-  resources :categories, only: :index
-  resources :categorie, only: [:new, :creat, :edit, :update, :destroy]
+  resources :categories
+  #resources :categorie, only: [:show, :new]
 
 
   root 'welcome#index'

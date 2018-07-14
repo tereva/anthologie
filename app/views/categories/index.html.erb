@@ -1,0 +1,26 @@
+<h1>Categories#index</h1>
+<p>Find me in app/views/categories/index.html.erb</p>
+
+<h1>Toutes les catégories</h1>
+ 
+<table>
+  <tr>
+    <th>Index</th>
+    <th>Nom</th>
+    <th></th>
+  </tr>
+ 
+  <% @categories.each do |categorie| %>
+    <tr>
+      <td><%= categorie.id %></td>
+      <td><%= categorie.nom %></td>
+      <td><%= link_to 'Voir', category_path(categorie) %></td>
+      <td><%= link_to 'Editer', edit_category_path(categorie) %></td>
+      <td><%= link_to 'Effacer', category_path(categorie), method: :delete, 
+                            data: {confirm: 'Etes vous sûr?'} %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Ajouter', new_category_path%>
+<%= link_to 'Retour', root_path %>

@@ -1,0 +1,24 @@
+<%= form_with model: @categorie, local: true do |form| %> 
+
+<% if @categorie.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@categorie.errors.count, "erreur") %>. Impossible d'enregistrer la catégorie :
+      </h2>
+      <ul>
+        <% @categorie.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= form.label :nom%><br>
+    <%= form.text_field :nom %>
+  </p>
+ 
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
