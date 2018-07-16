@@ -1,5 +1,7 @@
 class AuteursController < ApplicationController
 
+    before_action :authorize, only: [:new, :create, :edit, :update, :destroy]
+    
     def index
 		@auteurs = Auteur.all	
 	end
